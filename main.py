@@ -1,6 +1,6 @@
 import os
 
-os.environ["LHAMA_CLOUD_API_KEY"] = "llx-sw4tyjcYJtflJ311Sz5q2ibmMjGG0521I0BGc5Mzztg3SIT4"
+os.environ["LLAMA_CLOUD_API_KEY"] = "llx-sw4tyjcYJtflJ311Sz5q2ibmMjGG0521I0BGc5Mzztg3SIT4"
 
 from llama_parse import LlamaParse
 
@@ -9,5 +9,5 @@ documents = LlamaParse(result_type="markdown", parsing_instruction="This file co
 print(len(documents))
 
 for i, page in enumerate(documents):
-    with open(f"my_pdf/pagina{i+1}.md", "w", encoding="utf-8") as archive:
+    with open(f"documents/pagina-{i+1}.md", "w", encoding="utf-8") as archive:
         archive.write(page.text)
