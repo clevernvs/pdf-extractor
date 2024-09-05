@@ -1,10 +1,14 @@
+from llama_parse import LlamaParse
+from dotenv import load_dotenv
+
 import os
 
-os.environ["LLAMA_CLOUD_API_KEY"] = "llx-sw4tyjcYJtflJ311Sz5q2ibmMjGG0521I0BGc5Mzztg3SIT4"
+load_dotenv()
 
-from llama_parse import LlamaParse
-
-documents = LlamaParse(result_type="markdown", parsing_instruction="This file contains texts and tables. I'd like to get only the tables from the text").load_data("resultado.pdf")
+documents = LlamaParse(
+    result_type="markdown",
+    parsing_instruction="This file contains texts and tables. I'd like to get only the tables from the text"
+).load_data("resultado.pdf")
 
 print(len(documents))
 
